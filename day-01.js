@@ -1,10 +1,14 @@
 const value= 1;
 console.log(value);
 
-//NISHA
+const value2= 5;
+console.log(value2);
+
+
+
+// FIRST QUESTION IN ARRAY ------
 
 let arr = [1, 4, 5, 6, 0, 0, 9, 0];
-
 let pos = 0; // Position to place the next non-zero
 
 for (let i = 0; i < arr.length; i++) {
@@ -20,5 +24,8 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log(arr);  // [1, 4, 5, 6, 9, 0, 0, 0]
+
+
+
 
 
