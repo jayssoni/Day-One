@@ -2,10 +2,12 @@ const value= 1;
 console.log(value);
 
 
-const value2 = 2;
+const value2= 5;
 console.log(value2);
-const value2= 2;
-console.log(value2);
+
+
+
+
 
 
 //SHEKHAR
