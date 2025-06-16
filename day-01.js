@@ -1,43 +1,24 @@
-const value= 1;
-console.log(value);
-console.log(value + 1); 
+// 📅 Day-01.js: JavaScript Basics
 
+// Variables
+var name = "Suraj";
+let age = 25;
+const PI = 3.14;
 
+// Data Types
+let str = "Hello";
+let num = 42;
+let bool = true;
+let n = null;
+let u = undefined;
 
-// this is a code from deepanshu 
-//ever or odd
-const number = 2;
-if (number % 2 === 0) {
-    console.log("Even");
-}else {
-    console.log("Odd");
-}
+console.log(typeof str); // string
 
-const value2= 5;
-console.log(value2);
-
-
-
-// FIRST QUESTION IN ARRAY ------
-
-let arr = [1, 4, 5, 6, 0, 0, 9, 0];
-let pos = 0; // Position to place the next non-zero
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] !== 0) {
-    // Swap arr[i] with arr[pos] if i != pos
-    if (i !== pos) {
-      let temp = arr[i];
-      arr[i] = arr[pos];
-      arr[pos] = temp;
-    }
-    pos++;
-  }
-}
-
-console.log(arr);  // [1, 4, 5, 6, 9, 0, 0, 0]
-
-
-
-
-
+/*
+🧠 Day-01 Questions:
+1. What is the difference between var, let, and const? (Easy)
+2. Name all JavaScript primitive data types. (Easy)
+3. What is hoisting? (Medium)
+4. Explain the difference between null and undefined. (Medium)
+5. How does JavaScript handle type checking? (Hard)
+*/
