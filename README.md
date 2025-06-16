@@ -175,6 +175,114 @@ Limits how often a function is called during repetitive events (like scroll).
 
 ---
 
+
+# 📘 JavaScript Core Theory Notes – All-in-One (Beginner to Advanced)
+
+> 🗓️ Updated: June 16, 2025
+
+---
+
+## 📌 1. Why JavaScript Is Single-Threaded
+
+JavaScript was designed to run in the browser and manipulate the DOM. Allowing multiple threads to change the UI at the same time would create race conditions and bugs.
+
+### ✅ Reasons:
+- Safe DOM manipulation (no thread collision)
+- Simple synchronous programming model
+- Lightweight and fast for client-side apps
+
+---
+
+## 🧵 2. What Does “Single-Threaded” Mean?
+
+- JavaScript runs one piece of code at a time on a **single call stack**.
+- There is **only one execution context active at a time**.
+- No simultaneous operations unless handled by the browser (via APIs like `setTimeout`, `fetch`, etc.).
+
+---
+
+## 🔁 3. JavaScript Runtime Architecture
+
+```txt
+JavaScript Engine
+├── Call Stack         → Executes synchronous code
+└── Event Loop
+    ├── Microtask Queue → Promise.then, queueMicrotask
+    └── Macrotask Queue → setTimeout, setInterval, DOM Events
+
+```
+
+
+---
+
+## 📦 4. Web APIs
+
+Web APIs are features provided by **browsers**, not the JavaScript engine itself.
+
+**Examples:**
+- `setTimeout`, `setInterval`
+- `fetch`, `XMLHttpRequest`
+- `DOM Events`, `WebSocket`
+- `Geolocation`, `LocalStorage`
+
+---
+
+## 🔂 5. Event Loop
+
+- Keeps checking if the **call stack is empty**.
+- If yes, moves tasks from queues (micro or macro) into the stack.
+
+### Task Priorities:
+1. All synchronous code runs first.
+2. Then microtasks (Promise handlers).
+3. Then macrotasks (timers, events).
+
+---
+
+## 🎯 6. Microtask vs Macrotask
+
+| Feature         | Microtask                    | Macrotask                     |
+|------------------|------------------------------|-------------------------------|
+| Common Examples  | `Promise.then()`, `async/await`, `queueMicrotask()` | `setTimeout()`, `setInterval()`, `DOM events` |
+| Priority         | Higher                       | Lower                         |
+| When Executed    | Right after stack clears     | After microtasks              |
+
+---
+
+## 💡 7. Example Execution
+
+```js
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+
+```
+
+## 🧠 8. Interview Key Points
+
+- JavaScript is **single-threaded** for DOM safety.
+- Uses **Web APIs + Event Loop** for asynchronous code.
+- **Microtasks** run before **macrotasks**.
+- `Promise.then()` is a **microtask**.
+- `setTimeout` is a **macrotask**.
+
+---
+
+## ✅ 9. Final Notes
+
+- JS async behavior is powered by the **browser**, not native concurrency.
+- The single thread makes JavaScript **lightweight and deterministic**.
+- Learn the **Event Loop** – it's one of the most frequently asked interview topics!
+
+
 # ✅ End of Theory Section
 
 📂 You can now move to the next part: **JavaScript Code Examples Section** with all relevant examples day-by-day.
